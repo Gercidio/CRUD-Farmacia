@@ -54,12 +54,12 @@ public class CategoriaController {
 
 	}
 
-	@PostMapping("/create")
+	@PostMapping("/criar")
 	public ResponseEntity<Categoria> post(@Valid @RequestBody Categoria categoria) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaRepository.save(categoria));
 	}
 
-	@PutMapping("/update")
+	@PutMapping("/atualizar")
 	public ResponseEntity<Categoria> put(@Valid @RequestBody Categoria categoria) {
 		if (categoriaRepository.existsById(categoria.getId())) {
 			return ResponseEntity.status(HttpStatus.OK).body(categoriaRepository.save(categoria));
